@@ -204,7 +204,7 @@
 
     <div class="vid-row">
       <div class="vid" role="button" tabindex="0" data-src="v-a" data-poster="p-a" aria-label="Play testimonial from Ember Permanent Lighting">
-        <img src="media/ember-poster.jpg" alt="">
+        <img src="ember-poster.jpg" alt="">
         <span class="play"><b></b><small>Tap to play (41 sec)</small></span>
         <video playsinline controls preload="none"></video>
       </div>
@@ -229,7 +229,7 @@
 
       <div class="vid-row">
         <div class="vid" role="button" tabindex="0" data-src="v-b" data-poster="p-b" aria-label="Play testimonial from Josiah, owner of Southern Epoxy Flooring">
-          <img src="media/southern-epoxy-poster.jpg" alt="">
+          <img src="southern-epoxy-poster.jpg" alt="">
           <span class="play"><b></b><small>Tap to play (41 sec)</small></span>
           <video playsinline controls preload="none"></video>
         </div>
@@ -299,7 +299,7 @@
 <script>
 (function(){
   var urls = {};
-  function blobUrl(id){ return {'v-a':'media/ember-testimonial.mp4','v-b':'media/southern-epoxy-testimonial.mp4'}[id]; }
+  function blobUrl(id){ return {'v-a':'ember-testimonial.mp4','v-b':'southern-epoxy-testimonial.mp4'}[id]; }
   var vids = document.querySelectorAll('.vid');
   vids.forEach(function(btn){
     var video = btn.querySelector('video');
