@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FlowLinkAI — Websites for local service businesses</title>
+<meta property="og:title" content="FlowLinkAI — Websites for local service businesses">
+<meta property="og:description" content="Custom-coded, video-first websites for local service businesses. See recent builds for Ember Permanent Lighting, Southern Epoxy Flooring and CashHardClub.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9A%A1%3C/text%3E%3C/svg%3E">
+<meta name="description" content="FlowLinkAI builds custom-coded, video-first websites for local service businesses. Recent work for Ember Permanent Lighting, Southern Epoxy Flooring and CashHardClub.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:#F1F2F4; --ink:#101318; --muted:#59606D; --accent:#2B4CFF; --accent-ink:#ffffff; --line:#D3D6DC; --panel:#ffffff;
+    --font:"Archivo","Arial Narrow",Arial,Helvetica,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0F1115; --ink:#ECEEF2; --muted:#A3A9B5; --accent:#7D8FFF; --accent-ink:#0B0E1A; --line:#2A2F3A; --panel:#171A21;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0F1115; --ink:#ECEEF2; --muted:#A3A9B5; --accent:#7D8FFF; --accent-ink:#0B0E1A; --line:#2A2F3A; --panel:#171A21;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%;}
+  *,*::before,*::after{box-sizing:inherit;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--font); font-weight:400; font-stretch:100%;
+    font-size:17px; line-height:1.5;
+    padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));
+  }
+  img,video{max-width:100%;display:block;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px;}
+
+  /* header */
+  .top{display:flex;align-items:baseline;justify-content:space-between;padding:20px 0 6px;}
+  .mark{font-weight:800;font-stretch:112%;letter-spacing:-.01em;font-size:20px;text-decoration:none;}
+  .top small{color:var(--muted);font-size:13px;}
+
+  /* hero */
+  .hero{padding:44px 0 42px;}
+  .hero h1{
+    font-weight:850;font-stretch:66%;line-height:.92;letter-spacing:-.015em;
+    font-size:clamp(58px,15vw,120px);margin:0 0 22px;
+  }
+  .hero p{font-size:18px;max-width:34em;margin:0 0 26px;color:var(--ink);}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);
+    text-decoration:none;font-weight:700;padding:14px 20px;border-radius:12px;font-size:16px;}
+  .cta.secondary{background:transparent;color:var(--ink);border:2px solid var(--line);}
+  .hero .ctas{display:flex;gap:10px;flex-wrap:wrap;}
+
+  .lead-in{border-top:2px solid var(--ink);padding:18px 0 10px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
+  .lead-in h2{margin:0;font-weight:800;font-stretch:80%;font-size:22px;}
+  .lead-in span{color:var(--muted);font-size:14px;}
+
+  /* case panels */
+  .case{position:relative;color:var(--c-ink);background:var(--c-bg);overflow:hidden;}
+  .case .wrap{padding-top:56px;padding-bottom:56px;position:relative;z-index:1;}
+  .case .kicker{margin:0 0 8px;font-size:15px;opacity:.82;}
+  .case h2{font-weight:850;font-stretch:68%;line-height:.95;letter-spacing:-.01em;font-size:clamp(44px,11vw,84px);margin:0 0 20px;}
+  .case p.body{font-size:17px;max-width:36em;margin:0 0 18px;}
+  .case ul{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:8px;max-width:36em;}
+  .case li{padding-left:18px;position:relative;font-size:16px;}
+  .case li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--c-accent);}
+  .case .go{display:inline-block;text-decoration:none;font-weight:700;padding:13px 18px;border-radius:12px;
+    background:var(--c-accent);color:var(--c-accent-ink);font-size:15px;}
+  .case .go span{font-weight:400;opacity:.85;}
+
+  /* Ember: night sky + LED roofline */
+  .case--ember{--c-bg:linear-gradient(180deg,#0A1024 0%,#141B3E 55%,#1B1F3D 100%);--c-ink:#F7F1E4;--c-accent:#F5A524;--c-accent-ink:#1A1206;}
+  .case--ember::before{
+    content:"";position:absolute;left:0;right:0;top:0;height:5px;
+    background:repeating-linear-gradient(90deg,#FFD27A 0 7px,transparent 7px 26px);
+    box-shadow:0 0 18px 4px rgba(245,165,36,.55),0 0 70px 18px rgba(245,165,36,.22);
+  }
+  .case--ember::after{
+    content:"";position:absolute;left:0;right:0;top:0;height:220px;pointer-events:none;
+    background:linear-gradient(180deg,rgba(245,165,36,.18),rgba(245,165,36,0));
+  }
+
+  /* Southern Epoxy: flake-broadcast concrete under a gloss coat */
+  .case--epoxy{--c-bg:#D6D3CC;--c-ink:#171A1F;--c-accent:#22303B;--c-accent-ink:#F3F1EC;}
+  .case--epoxy::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(#2b2f36 1.3px,transparent 1.8px),
+      radial-gradient(#ffffff 1.1px,transparent 1.5px),
+      radial-gradient(#8f8371 1.3px,transparent 1.8px),
+      radial-gradient(#5b6470 1px,transparent 1.4px),
+      radial-gradient(#c9b99a 1.2px,transparent 1.6px);
+    background-size:23px 19px,17px 29px,31px 23px,13px 37px,41px 31px;
+    background-position:0 0,7px 11px,13px 3px,5px 17px,21px 9px;
+    opacity:.9;
+  }
+  .case--epoxy::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0) 45%);}
+  .case--epoxy .sheet{background:rgba(246,245,242,.94);border-radius:18px;padding:26px 22px 28px;box-shadow:0 12px 40px rgba(0,0,0,.12);}
+  @media (min-width:600px){.case--epoxy .sheet{padding:34px 34px 36px;}}
+
+  /* CashHardClub: the vault */
+  .case--chc{--c-bg:#050505;--c-ink:#F2EDE3;--c-accent:#C9A24C;--c-accent-ink:#161204;}
+  .case--chc::before{
+    content:"";position:absolute;right:-34vw;top:-40px;width:110vw;height:110vw;max-width:820px;max-height:820px;border-radius:50%;
+    background:
+      radial-gradient(circle,transparent 0 41%,rgba(201,162,76,.28) 41.2% 41.8%,transparent 42% 55%,rgba(201,162,76,.18) 55.2% 55.6%,transparent 56% 70%,rgba(201,162,76,.12) 70.2% 70.5%,transparent 71%);
+    pointer-events:none;
+  }
+  .case--chc .kicker,.case--chc p.body,.case--chc li{position:relative;}
+
+  /* testimonial video */
+  .vid-row{margin-top:34px;display:grid;gap:14px;grid-template-columns:1fr;align-items:start;}
+  @media (min-width:600px){.vid-row{grid-template-columns:240px 1fr;align-items:center;gap:24px;}}
+  .vid{position:relative;width:min(240px,72vw);aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);border:0;padding:0;cursor:pointer;text-align:left;}
+  .vid img{width:100%;height:100%;object-fit:cover;}
+  .vid video{width:100%;height:100%;object-fit:cover;display:none;background:#000;}
+  .vid .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.55));}
+  .vid .play b{width:66px;height:66px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35);}
+  .vid .play b::after{content:"";margin-left:5px;border-left:22px solid #111;border-top:13px solid transparent;border-bottom:13px solid transparent;}
+  .vid .play small{position:absolute;left:14px;right:14px;bottom:14px;color:#fff;font-size:13px;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.6);}
+  .vid.playing img,.vid.playing .play{display:none;}
+  .vid.playing video{display:block;}
+  .vid-cap{font-size:15px;max-width:26em;margin:0;opacity:.9;}
+  .vid-cap strong{display:block;font-size:17px;font-weight:700;margin-bottom:4px;opacity:1;}
+
+  /* services + process (page chrome) */
+  section.plain{padding:50px 0 8px;}
+  section.plain h2{font-weight:850;font-stretch:68%;line-height:.95;font-size:clamp(40px,10vw,72px);margin:0 0 22px;letter-spacing:-.01em;}
+  .svc{display:grid;gap:0;border-top:1px solid var(--line);}
+  .svc div{padding:16px 0;border-bottom:1px solid var(--line);display:grid;gap:4px;}
+  .svc strong{font-weight:700;font-size:18px;}
+  .svc span{color:var(--muted);font-size:15px;}
+  ol.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:14px;}
+  ol.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;font-size:17px;}
+  ol.steps li::before{content:counter(s);font-weight:850;font-stretch:66%;font-size:38px;line-height:1;color:var(--accent);}
+
+  /* contact */
+  .contact{padding:44px 0 30px;}
+  .contact h2{font-weight:850;font-stretch:68%;line-height:.95;font-size:clamp(46px,12vw,88px);margin:0 0 14px;letter-spacing:-.01em;}
+  .contact p{max-width:30em;margin:0 0 22px;}
+  .phone{display:block;text-decoration:none;font-weight:800;font-stretch:80%;font-size:clamp(34px,9vw,58px);line-height:1;margin:0 0 10px;letter-spacing:-.01em;}
+  .email{display:inline-block;color:var(--muted);text-decoration:underline;text-underline-offset:4px;margin-bottom:26px;}
+  .where{color:var(--muted);font-size:15px;}
+  footer{padding:14px 0 26px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:20px;}
+
+  /* sticky action bar */
+  .bar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    background:var(--bg);background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);}
+  .bar .in{max-width:720px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .bar a{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;font-size:16px;padding:14px 12px;border-radius:12px;}
+  .bar .text{background:var(--accent);color:var(--accent-ink);}
+  .bar .call{background:var(--panel);color:var(--ink);border:2px solid var(--line);}
+
+  @media (prefers-reduced-motion:no-preference){
+    .vid .play b{transition:transform .15s ease;}
+    .vid:hover .play b,.vid:focus-visible .play b{transform:scale(1.06);}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#top" id="top">FlowLinkAI</a>
+    <small>Adam Rutledge</small>
+  </header>
+
+  <section class="hero">
+    <h1>Look like the biggest company in town.</h1>
+    <p>FlowLinkAI builds custom-coded, video-first websites for local service businesses — the kind that earn trust before the phone rings. Three recent builds are below, with two clients on camera.</p>
+    <div class="ctas">
+      <a class="cta" href="sms:+16163858776">Text Adam</a>
+      <a class="cta secondary" href="#work">See the work</a>
+    </div>
+  </section>
+
+  <div class="lead-in" id="work">
+    <h2>Recent builds</h2>
+    <span>Tap any site to open it live</span>
+  </div>
+</div>
+
+<!-- EMBER -->
+<article class="case case--ember" id="ember">
+  <div class="wrap">
+    <p class="kicker">Permanent LED roofline lighting, installed across Utah and nationwide.</p>
+    <h2>Ember Permanent Lighting</h2>
+    <p class="body">Ember came in with a Wix template that didn't match a premium install. I rebuilt the whole site in custom code — a cinematic video hero, a hardware spec section, a real-home gallery, Google reviews and a quote form — then moved the domain over and kept managing it after launch.</p>
+    <ul>
+      <li>Wix template replaced with a custom-coded site on fast hosting</li>
+      <li>Every video re-encoded so the page loads instantly on a phone</li>
+      <li>Domain, SSL and DNS handled end to end</li>
+    </ul>
+    <a class="go" href="https://emberpermanentlighting.com" target="_blank" rel="noopener">Open emberpermanentlighting.com</a>
+
+    <div class="vid-row">
+      <div class="vid" role="button" tabindex="0" data-src="v-a" data-poster="p-a" aria-label="Play testimonial from Ember Permanent Lighting">
+        <img src="media/ember-poster.jpg" alt="">
+        <span class="play"><b></b><small>Tap to play (41 sec)</small></span>
+        <video playsinline controls preload="none"></video>
+      </div>
+      <p class="vid-cap"><strong>Ember Permanent Lighting</strong>On the rebuild and what it's been like to work with FlowLinkAI.</p>
+    </div>
+  </div>
+</article>
+
+<!-- SOUTHERN EPOXY -->
+<article class="case case--epoxy" id="epoxy">
+  <div class="wrap">
+    <div class="sheet">
+      <p class="kicker">Garage and concrete coatings across South Georgia and North Florida.</p>
+      <h2>Southern Epoxy Flooring</h2>
+      <p class="body">A floor is a system, so the site works like one: a layer-by-layer explainer, a tap-to-switch finish picker on the same garage, clear pricing by system, and a free-estimate form. I also set up the domain, DNS and business email so Josiah runs everything from one place.</p>
+      <ul>
+        <li>Interactive finish picker — five looks on one garage</li>
+        <li>Pricing by system so customers pre-qualify themselves</li>
+        <li>Domain, DNS and company email set up, not just the site</li>
+      </ul>
+      <a class="go" href="https://southern-epoxy.com" target="_blank" rel="noopener">Open southern-epoxy.com</a>
+
+      <div class="vid-row">
+        <div class="vid" role="button" tabindex="0" data-src="v-b" data-poster="p-b" aria-label="Play testimonial from Josiah, owner of Southern Epoxy Flooring">
+          <img src="media/southern-epoxy-poster.jpg" alt="">
+          <span class="play"><b></b><small>Tap to play (41 sec)</small></span>
+          <video playsinline controls preload="none"></video>
+        </div>
+        <p class="vid-cap"><strong>Josiah, owner</strong>On what it was like to work with FlowLinkAI — recorded from the truck between jobs.</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- CASHHARDCLUB -->
+<article class="case case--chc" id="chc">
+  <div class="wrap">
+    <p class="kicker">Limited-run streetwear brand with its own storefront.</p>
+    <h2>CashHardClub</h2>
+    <p class="body">The brief was "a site unlike anything else." So the store became a vault: a cinematic door opens as you scroll and reveals all eight pieces in numbered bays, each with sizes, the story, and a Buy Now that completes on their official store. The visuals were generated with AI and matched to the real product photos.</p>
+    <ul>
+      <li>Scroll-driven vault entrance, built in custom code</li>
+      <li>AI-generated cinematic visuals, matched to real merch photos</li>
+      <li>Every piece links straight to checkout on the official store</li>
+    </ul>
+    <a class="go" href="https://cashhardclub.com" target="_blank" rel="noopener">Open cashhardclub.com</a>
+
+  </div>
+</article>
+
+<div class="wrap">
+  <section class="plain">
+    <h2>What I build</h2>
+    <div class="svc">
+      <div><strong>Websites</strong><span>Custom-coded and mobile-first, built around video. No templates, no page builders, nothing that looks like your competitor's site.</span></div>
+      <div><strong>AI visuals and video</strong><span>Cinematic product and brand assets when you don't have a photographer or a film crew.</span></div>
+      <div><strong>The setup nobody else does</strong><span>Domain, hosting, business email and DNS — handled, so you're never stuck on a support line.</span></div>
+      <div><strong>Automation</strong><span>Booking, follow-up texts and lead routing so a missed call doesn't become a lost job.</span></div>
+      <div><strong>Apps</strong><span>Simple phone apps for brands that have outgrown a website.</span></div>
+    </div>
+  </section>
+
+  <section class="plain">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li>We talk for 15 minutes about your business and what a customer needs to see to trust you.</li>
+      <li>You get a first version to react to within days, not weeks.</li>
+      <li>We revise until you'd be proud to put it on your truck.</li>
+      <li>It goes live on your own domain. You own every bit of it.</li>
+    </ol>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Ready when you are.</h2>
+    <p>Text is fastest. Send your business name and I'll reply with what I'd build for you.</p>
+    <a class="phone" href="sms:+16163858776">(616) 385-8776</a>
+    <a class="email" href="mailto:adamrutrut@gmail.com">adamrutrut@gmail.com</a>
+    <p class="where">Working from Chiang Mai, Thailand. Building for businesses anywhere.</p>
+  </section>
+
+  <footer>FlowLinkAI — Adam Rutledge. Ember Permanent Lighting, Southern Epoxy Flooring and CashHardClub are real clients; their sites are linked above.</footer>
+</div>
+
+<nav class="bar" aria-label="Contact Adam">
+  <div class="in">
+    <a class="text" href="sms:+16163858776">Text Adam</a>
+    <a class="call" href="tel:+16163858776">Call (616) 385-8776</a>
+  </div>
+</nav>
+
+
+<script>
+(function(){
+  var urls = {};
+  function blobUrl(id){ return {'v-a':'media/ember-testimonial.mp4','v-b':'media/southern-epoxy-testimonial.mp4'}[id]; }
+  var vids = document.querySelectorAll('.vid');
+  vids.forEach(function(btn){
+    var video = btn.querySelector('video');
+    btn.addEventListener('keydown', function(ev){ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); btn.click(); } });
+    btn.addEventListener('click', function(ev){
+      if(btn.classList.contains('playing')) return;
+      ev.preventDefault();
+      // pause any other playing testimonial
+      vids.forEach(function(o){ if(o!==btn){ var v=o.querySelector('video'); if(v && !v.paused) v.pause(); }});
+      video.src = blobUrl(btn.getAttribute('data-src'));
+      btn.classList.add('playing');
+      btn.setAttribute('aria-label','Testimonial video playing');
+      var p = video.play(); if(p && p.catch) p.catch(function(){});
+    });
+  });
+})();
+</script>
+</body>
+</html>
