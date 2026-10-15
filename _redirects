@@ -1,3 +1,4 @@
 # The portfolio now lives at https://rutledgemade.com (served with the RutledgeMade previews).
-# Every old link forwards there, path and all.
-/*  https://rutledgemade.com/:splat  301!
+# Old links to the Netlify address forward there, path and all. Only that address: if
+# rutledgemade.com itself ever reaches this site, it is served normally instead of looping.
+https://rutledgemadesites.netlify.app/*  https://rutledgemade.com/:splat  301!
